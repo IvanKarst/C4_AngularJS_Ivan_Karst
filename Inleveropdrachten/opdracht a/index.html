@@ -1,0 +1,91 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- Begin internal links -->
+	<link href="inc/master.css" rel="stylesheet">
+	<script src="inc/inc.js"></script>
+	<!-- End internal links -->
+
+	<!-- Begin Angular -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<!-- End Angular -->
+
+	<!-- Begin Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	<!-- End Bootstrap  -->
+</head>
+<body class="body">
+	<div class="row px-5 py-3 mx-0 banner">
+		<div class="col-1"></div>
+		<div class="col-3">
+			<img src="img/logo.png" class="logo">
+			<b class="centered">FORMalities</b>
+		</div>
+	</div>
+	<div class="pt-3 px-3 cntr" ng-app="myApp" ng-controller="myCtrl">
+		<div class="ctn">
+			<form method="post">
+				<div class="row px-3 py-1">
+					<div class="col-2 col-lg-1">
+						Voornaam:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="firstName" placeholder="voornaam">
+					</div>
+					<div class="col-2 col-lg-1">
+						Achternaam:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="lastName" placeholder="achternaam">
+					</div>
+				</div>
+				<div class="row px-3 py-1">
+					<div class="col-2 col-lg-1">
+						Straatnaam:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="street" placeholder="straatnaam">
+					</div>
+					<div class="col-2 col-lg-1">
+						Huisnummer:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="housenumber" placeholder="huisnummer">
+					</div>
+				</div>
+				<div class="row px-3 py-1">
+					<div class="col-2 col-lg-1">
+						Postcode:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="postalCode" placeholder="postcode">
+					</div>
+			  		<div class="col-2 col-lg-1">
+						Woonplaats:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="place" placeholder="woonplaats">
+					</div>
+				</div>
+				<div class="row px-3 py-1">
+					<div class="col-2 col-lg-1">
+						Emailadres:
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<input required class="input" type="text" ng-model="emailadress" placeholder="emailadres">
+					</div>
+					<div class="col-2 col-lg-1">
+					</div>
+					<div class="px-3 col-10 col-lg-5">
+						<button class="button">Verstuur</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
