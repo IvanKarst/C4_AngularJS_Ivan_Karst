@@ -1,3 +1,3 @@
-binder = function(){
+var binder = function(){
 	
 }
