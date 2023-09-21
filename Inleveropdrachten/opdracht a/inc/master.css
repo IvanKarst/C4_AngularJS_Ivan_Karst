@@ -77,3 +77,8 @@
 .ng-touched.ng-not-empty.ng-valid{
 	box-shadow: yellow;
 }
+
+.head{
+	font-weight: bold;
+	border-bottom: solid 1px black;
+}

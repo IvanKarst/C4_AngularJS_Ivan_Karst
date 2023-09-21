@@ -82,12 +82,40 @@
 						<input required class="input" type="text" ng-model="emailadress" placeholder="emailadres">
 					</div>
 				</div>
-				<div class="row px-3 py-1">
+				<!-- <div class="row px-3 py-1">
 					<div class="col-12 col-6 mt-2 mt-lg-0">
 						<div class="button" ng-click="render_table()">Click here to render table</div>
 					</div>
-				</div>
+				</div> -->
 			</form>
+
+			<div class="table px-3 mt-5">
+				<div class="row head">
+					<div class="col-2">
+						Voornaam
+					</div>
+					<div class="col-2">
+						Achternaam
+					</div>
+					<div class="col-2">
+						Straatnaam
+					</div>
+					<div class="col-1">
+						Huisnr.
+					</div>
+					<div class="col-1">
+						Postcode
+					</div>
+					<div class="col-2">
+						Woonplaats
+					</div>
+					<div class="col-2">
+						Emailadres
+					</div>
+				</div>
+				<div class="row sub binder">
+				</div>
+			</div>
 			<div class="binder">
 				<script>
 					{{ render }}
