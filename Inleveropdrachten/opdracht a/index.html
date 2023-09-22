@@ -11,6 +11,8 @@
 	
 	<!-- Begin internal links -->
 	<link href="inc/master.css" rel="stylesheet">
+	<script src="inc/model.js" defer></script>
+	<script src="inc/controller.js" defer></script>
 	<!-- End internal links -->
 
 	<!-- Begin Bootstrap link -->
@@ -27,7 +29,7 @@
 			<b class="centered">FORMal</b>
 		</div>
 	</div>
-	<div class="pt-3 px-3 cntr" ng-app="myApp" ng-controller="myCtrl" data-ng-init="render()">
+	<div class="pt-3 px-3 cntr" ng-app="myApp" ng-controller="myCtrl" ng-init="render()">
 		<div class="ctn">
 			<form method="post">
 				<div class="row px-3 py-1">
@@ -117,5 +119,3 @@
 		</div>
 	</div>
 </body>
-<script src="inc/model.js" defer></script>
-<script src="inc/controller.js" defer></script>

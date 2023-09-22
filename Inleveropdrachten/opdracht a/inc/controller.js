@@ -1,6 +1,7 @@
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($data) {
 	$data.render = function() {
+		alert("test")
 		// sets row
 		const parent = document.querySelector('.binder');
 		const child = document.createElement('div');
