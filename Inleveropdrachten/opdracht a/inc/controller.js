@@ -1,6 +1,6 @@
 var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-	$scope.render = function() {
+app.controller('myCtrl', function($data) {
+	$data.render = function() {
 		// sets row
 		const parent = document.querySelector('.binder');
 		const child = document.createElement('div');
@@ -15,14 +15,12 @@ app.controller('myCtrl', function($scope) {
 	}
 
 	// Grabs data based on input
-	$scope.data_grabber = function() {
+	$data.grabber = function() {
 		alert(base[firstName]);
 	}
 
 	// Validates data requested by the grabber
-	$scope.data_validator = function() {
+	$data.validator = function() {
 
 	}
 });
-
-render()
