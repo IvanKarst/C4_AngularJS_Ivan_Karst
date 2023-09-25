@@ -1,4 +1,4 @@
-var base = Array[
+const base = Array[
 	firstName   	= "John",
 	lastName		= "Doe",
 	street			= "Streetname",
@@ -8,7 +8,7 @@ var base = Array[
 	emailadress		= "johndoe123@hotmail.com"
 ];
 
-var regex = Array[
+const regex = Array[
 	name_reg		= "/^[A-Z][a-z'-]+$/",
 	street_reg		= "/^[A-z-]+$/",
 	number_reg		= "/^\d{1,4}(\s?)[a-z]{0,1}",
