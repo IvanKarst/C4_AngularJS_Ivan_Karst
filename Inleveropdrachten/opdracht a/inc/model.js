@@ -1,12 +1,15 @@
-const base = Array[
-	firstName   	= "John",
-	lastName		= "Doe",
-	street			= "Streetname",
-	housenumber		= "123a",
-	postalCode		= "1234 AB",
-	place			= "Place",
-	emailadress		= "johndoe123@hotmail.com"
-];
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope) {
+	$scope.base = Array[
+		firstName   	= "John",
+		lastName		= "Doe",
+		street			= "Streetname",
+		housenumber		= "123a",
+		postalCode		= "1234 AB",
+		place			= "Place",
+		emailadress		= "johndoe123@hotmail.com"
+	];
+});
 
 const regex = Array[
 	name_reg		= "/^[A-Z][a-z'-]+$/",
