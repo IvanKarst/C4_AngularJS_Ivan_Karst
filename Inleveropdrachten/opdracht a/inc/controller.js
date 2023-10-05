@@ -1,3 +1,5 @@
+import { regex_check } from "./model";
+
 var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
 	$scope.render = function() {
