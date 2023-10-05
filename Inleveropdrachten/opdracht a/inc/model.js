@@ -15,4 +15,5 @@ export function regex_check() {
 	postal_reg		= "/^\d{4}\s?([A-Z]{2}|[a-z]{2})$/",
 	place_reg		= "/^[A-z\s-]+$/",
 	emailadress		= "/^([A-z0-9.-])+@([A-z0-9.-])+\.([A-z0-9.-]){2,4}$/"
+	console.log(name_reg, street_reg)
 }

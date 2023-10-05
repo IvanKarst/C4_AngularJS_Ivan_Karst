@@ -1,20 +1,8 @@
-import { regex_check } from "./model";
-
 var app = angular.module('myApp', []);
+import { regex_check } from "./model";
 app.controller('myCtrl', function($scope) {
 	$scope.render = function() {
-		
-	}
-
-	// Grabs data based on input
-	$scope.grabber = function() {
-		if($scope.base[firstName] != ''){
-			alert('test')
-		}
-	}
-
-	// Validates data requested by the grabber
-	$scope.validator = function() {
-
+		console.log('test')
+		regex_check()
 	}
 });
