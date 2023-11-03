@@ -1,8 +1,14 @@
-import { regex_check } from "./model";
-var app = angular.module('myApp', []);
-app.controller('myCtrl', function($scope) {
-	$scope.info = {};
-	$scope.regex_check = function(){
-		
-	}
+angular.module('myApp', []).controller('myCtrl', function($scope, model) {
+	$scope.formData = model.getData();
+	$scope.editMode = false;
+
+	$scope.toggleEditMode = function () {
+		$scope.editMode = !$scope.editMode;
+	};
+
+	$scope.saveData = function () {
+		// Call the service to save the data
+		model.saveData($scope.formData);
+		$scope.editMode = false;
+	};
 });
