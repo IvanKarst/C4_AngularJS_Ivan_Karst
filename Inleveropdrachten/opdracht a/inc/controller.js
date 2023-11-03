@@ -1,8 +1,8 @@
-var app = angular.module('myApp', []);
 import { regex_check } from "./model";
+var app = angular.module('myApp', []);
 app.controller('myCtrl', function($scope) {
-	$scope.render = function() {
-		console.log('test')
-		regex_check()
+	$scope.info = {};
+	$scope.regex_check = function(){
+		
 	}
 });
