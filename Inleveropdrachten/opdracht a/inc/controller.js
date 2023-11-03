@@ -8,7 +8,7 @@ angular.module('myApp', []).controller('myCtrl', function($scope, model) {
 
 	$scope.saveData = function () {
 		// Call the service to save the data
-		model.saveData($scope.formData);
+		model.saveData($scope.info);
 		$scope.editMode = false;
 	};
 });
