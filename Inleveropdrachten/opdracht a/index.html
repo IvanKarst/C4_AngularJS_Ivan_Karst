@@ -31,19 +31,19 @@
 	</div>
 	<div class="pt-3 px-3 cntr" ng-app="myApp" ng-controller="myCtrl" ng-init="render()">
 		<div class="ctn">
-			<form method="post">
+			<form ng-submit="saveData()">
 				<div class="row px-3 py-1">
 					<div class="col-2 col-lg-1">
 						Voornaam:
 					</div>
 					<div class="px-3 col-10 col-lg-5">
-						<input required class="input" type="text" ng-model="firstName" placeholder="voornaam">
+						<input required class="input" type="text" ng-model="info.firstName" ng-disabled="!editMode" placeholder="voornaam">
 					</div>
 					<div class="col-2 col-lg-1 mt-2 mt-lg-0">
 						Achternaam:
 					</div>
 					<div class="px-3 col-10 col-lg-5 mt-2 mt-lg-0">
-						<input required class="input" type="text" ng-model="lastName" placeholder="achternaam">
+						<input required class="input" type="text" ng-model="info.lastName" ng-disabled="!editMode" placeholder="achternaam">
 					</div>
 				</div>
 				<div class="row px-3 py-1">
@@ -51,13 +51,13 @@
 						Straatnaam:
 					</div>
 					<div class="px-3 col-10 col-lg-5">
-						<input required class="input" type="text" ng-model="street" placeholder="straatnaam">
+						<input required class="input" type="text" ng-model="info.street" ng-disabled="!editMode" placeholder="straatnaam">
 					</div>
 					<div class="col-2 col-lg-1 mt-2 mt-lg-0">
 						Huisnummer:
 					</div>
 					<div class="px-3 col-10 col-lg-5 mt-2 mt-lg-0">
-						<input required class="input" type="text" ng-model="housenumber" placeholder="huisnummer">
+						<input required class="input" type="text" ng-model="info.housenumber" ng-disabled="!editMode" placeholder="huisnummer">
 					</div>
 				</div>
 				<div class="row px-3 py-1">
@@ -65,13 +65,13 @@
 						Postcode:
 					</div>
 					<div class="px-3 col-10 col-lg-5">
-						<input required class="input" type="text" ng-model="postalCode" placeholder="postcode">
+						<input required class="input" type="text" ng-model="info.postalCode" ng-disabled="!editMode" placeholder="postcode">
 					</div>
 			  		<div class="col-2 col-lg-1 mt-2 mt-lg-0">
 						Woonplaats:
 					</div>
 					<div class="px-3 col-10 col-lg-5 mt-2 mt-lg-0">
-						<input required class="input" type="text" ng-model="place" placeholder="woonplaats">
+						<input required class="input" type="text" ng-model="info.place" ng-disabled="!editMode" placeholder="woonplaats">
 					</div>
 				</div>
 				<div class="row px-3 py-1">
@@ -79,14 +79,14 @@
 						Emailadres:
 					</div>
 					<div class="px-3 col-10 col-lg-5">
-						<input required class="input" type="text" ng-model="emailadress" placeholder="emailadres">
+						<input required class="input" type="text" ng-model="info.emailadress" ng-disabled="!editMode" placeholder="emailadres">
 					</div>
 				</div>
-				<!-- <div class="row px-3 py-1">
+				<div class="row px-3 py-1">
 					<div class="col-12 col-6 mt-2 mt-lg-0">
-						<div class="button" ng-click="render_table()">Click here to render table</div>
+						<button class="button" ng-show="editMode">Save</button>
 					</div>
-				</div> -->
+				</div>
 			</form>
 
 			<div class="table px-3 mt-5">
@@ -115,39 +115,25 @@
 				</div>
 				<div class="row sub binder">
 					<div class="col-2 firstName">
-						<script>
-							{{ fn }}
-						</script>
+							{{ info.firstName }}
 					</div>
 					<div class="col-2 lastName">
-						<script>
 							{{ ln }}
-						</script>
 					</div>
 					<div class="col-2 street">
-						<script>
 							{{ st }}
-						</script>
 					</div>
 					<div class="col-1 housenumber">
-						<script>
 							{{ hn }}
-						</script>
 					</div>
 					<div class="col-1 postalCode">
-						<script>
 							{{ pc }}
-						</script>
 					</div>
 					<div class="col-2 place">
-						<script>
 							{{ pl }}
-						</script>
 					</div>
 					<div class="col-2 emailadress">
-						<script>
 							{{ ea }}
-						</script>
 					</div>
 				</div>
 			</div>
