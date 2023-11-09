@@ -2,8 +2,10 @@ angular.module('myApp').factory('model', function () {
 	var info = {
 		firstName: 'John',
 		lastName: 'Doe',
+		streetName: 'Homestreet',
 		housenumber: '123ab',
-		postalCode: '',
+		postalCode: '1234 AB',
+		residency: 'Cheese',
 		emailadresss: 'john@example.com',
 	};
   
@@ -12,7 +14,7 @@ angular.module('myApp').factory('model', function () {
 			return info;
 		},
 		saveData: function (newData) {
-		info = angular.copy(newData);
+			info = angular.copy(newData);
 		},
 	};
 });
