@@ -1,20 +1,18 @@
-angular.module('myApp').factory('model', function () {
-	var info = {
-		firstName: 'John',
-		lastName: 'Doe',
-		streetName: 'Homestreet',
-		housenumber: '123ab',
-		postalCode: '1234 AB',
-		residency: 'Cheese',
-		emailadresss: 'john@example.com',
-	};
-  
+const app = angular.module('myApp', [])
+
+app.factory('defaults', function () {
 	return {
-		getData: function () {
-			return info;
-		},
-		saveData: function (newData) {
-			info = angular.copy(newData);
-		},
+		defaults: [
+			{
+				firstName: 'John',
+				lastName: 'Doe',
+				streetName: 'Homestreet',
+				housenumber: '123ab',
+				postalCode: '1234 AB',
+				residency: 'Cheese',
+				emailadress: 'john@example.com',
+				pageLoad: ''
+			}
+		]
 	};
 });
