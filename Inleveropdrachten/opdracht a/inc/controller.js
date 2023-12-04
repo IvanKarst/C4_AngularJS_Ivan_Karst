@@ -1,25 +1,22 @@
 app.controller('myCtrl', function($scope, defaults) {
 	$scope.defaults = angular.copy(defaults.defaults);
 	$scope.formData = [];
-	$scope.currentData = $scope.defaults;
-	$scope.info = $scope.defaults;
+	$scope.info = $scope.defaults[0];
 
 	$scope.checkData = function (changed_data, $myCtrl) {
 		if (
 			$scope.formData.hasOwnProperty(changed_data) && 
 			$scope.formData[changed_data] != '' && 
 			$scope.formData[changed_data] != undefined && 
-			$scope.formData[changed_data].$valid
+			!$scope.formData[changed_data].$invalid
 		) {
-			$scope.currentData[changed_data] = $scope.formData[changed_data]
-			updateData();
-		} else {
-			console.log('ham')
+			$currentData = $scope.formData[changed_data]
+			$scope.updateData($currentData,changed_data);
 		}
 	};
 
-	var updateData = function() {
-		console.log('test')
-		$scope.info = $scope.currentData
+	$scope.updateData = function(data, changer) {
+		$scope.info[changer] = data
+		console.log($scope.info)
 	}
 });

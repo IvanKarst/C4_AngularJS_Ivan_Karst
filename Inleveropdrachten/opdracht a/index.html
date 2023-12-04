@@ -31,7 +31,7 @@
 	</div>
 	<div class="pt-3 px-3 cntr">
 		<div class="ctn">
-			<form>
+			<form name="myForm">
 				<div class="row px-3 py-1">
 					<div class="col-2 col-lg-1">
 						Voornaam:
@@ -57,7 +57,7 @@
 						Huisnummer:
 					</div>
 					<div class="px-3 col-10 col-lg-5 mt-2 mt-lg-0">
-						<input ng-change="checkData('housenumber')"  required class="input" type="text" ng-model="formData.housenumber" name="huisnummer" ng-pattern="/^[0-9]{3}\s?[A-Za-z]{1}$/">
+						<input ng-change="checkData('housenumber')"  required class="input" type="text" ng-model="formData.housenumber" name="huisnummer" ng-pattern="/^[0-9]{1,3}\s?[A-Za-z]{0,1}$/">
 					</div>
 				</div>
 				<div class="row px-3 py-1">
@@ -79,10 +79,25 @@
 						Emailadres:
 					</div>
 					<div class="px-3 col-10 col-lg-5">
-						<input ng-change="checkData('emailadress')" required class="input" type="text" ng-model="formData.emailadress" name="emailadres" ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/">
+						<input ng-change="checkData('emailadress')" required class="input" type="text" ng-model="formData.emailadress" name="emailadres" ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/">
         			</div>
 				</div>
 			</form>
+			<div class="row px-3 py-1" ng-show="myForm.$invalid">
+				<div class="col-6">
+					<b>
+						Formulier involledig of incorrect ingevuld.
+						Indien schuin gedrukt, loop volgende velden na:
+					</b>
+				</div>
+				<div class="col-6">
+					<div ng-repeat="(key, value) in myForm">
+						<div ng-if="value.$error.pattern">
+							<i><u>{{ key }}</i></u>
+						</div>
+					</div>
+				</div>
+			</div>
 			<div class="table px-3 mt-5">
 				<div class="row head">
 					<div class="col-2">
@@ -109,25 +124,25 @@
 				</div>
 				<div class="row sub binder">
 					<div class="col-2 firstName">
-						{{ info[0].firstName }}
+						{{ info.firstName }}
 					</div>
 					<div class="col-2 lastName">
-						{{ info[0].lastName }}
+						{{ info.lastName }}
 					</div>
 					<div class="col-2 streetName">
-						{{ info[0].streetName }}
+						{{ info.streetName }}
 					</div>
 					<div class="col-1 housenumber">
-						{{ info[0].housenumber }}
+						{{ info.housenumber }}
 					</div>
 					<div class="col-1 postalCode">
-						{{ info[0].postalCode }}
+						{{ info.postalCode }}
 					</div>
 					<div class="col-2 residency">
-						{{ info[0].residency }}
+						{{ info.residency }}
 					</div>
 					<div class="col-2 emailadress">
-						{{ info[0].emailadress }}
+						{{ info.emailadress }}
 					</div>
 				</div>
 			</div>
