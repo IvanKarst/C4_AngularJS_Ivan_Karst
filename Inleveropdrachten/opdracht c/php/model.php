@@ -1,2 +1,2 @@
 <?php
-$conn = new mysqli("myServer", "myUser", "myPassword", "Northwind");
+$conn = new mysqli("c4", "root", "", "LocalHost");

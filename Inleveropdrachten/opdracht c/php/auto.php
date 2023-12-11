@@ -8,10 +8,10 @@ $result = $conn->query("SELECT CompanyName, City, Country FROM Customers");
 
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Name":"' . $rs["CompanyName"] . '",';
-    $outp .= '"City":"' . $rs["City"] . '",';
-    $outp .= '"Country":"'. $rs["Country"] . '"}';
+	if ($outp != "") {$outp .= ",";}
+	$outp .= '{"Name":"' . $rs["CompanyName"] . '",';
+	$outp .= '"City":"' . $rs["City"] . '",';
+	$outp .= '"Country":"'. $rs["Country"] . '"}';
 }
 $outp ='{"records":['.$outp.']}';
 
