@@ -22,5 +22,52 @@
 	<!-- End Bootstrap link  -->
 </head>
 <body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="renderTable()">
-	Amongus
+	<!-- Form to add a new entry -->
+	<form ng-submit="updateTable(newCar)">
+		<div class="form-row">
+			<div class="form-group col-md-3">
+				<label for="kenteken">Kenteken</label>
+				<input type="text" class="form-control" id="kenteken" ng-model="newCar.kenteken" required>
+			</div>
+			<div class="form-group col-md-3">
+				<label for="kleur">Kleur</label>
+				<input type="text" class="form-control" id="kleur" ng-model="newCar.kleur" required>
+			</div>
+			<div class="form-group col-md-3">
+				<label for="merk">Merk</label>
+				<input type="text" class="form-control" id="merk" ng-model="newCar.merk" required>
+			</div>
+			<div class="form-group col-md-1">
+				<label for="aantal_deuren">Aantal Deuren</label>
+				<input type="number" class="form-control" id="aantal_deuren" ng-model="newCar.aantal_deuren" required>
+			</div>
+			<div class="form-group col-md-1">
+				<label for="prijs">Prijs</label>
+				<input type="number" class="form-control" id="prijs" ng-model="newCar.prijs" required>
+			</div>
+			<div class="form-group col-md-1">
+				<button type="submit" class="btn btn-primary">Add</button>
+			</div>
+		</div>
+	</form>
+
+	<!-- Car Table -->
+	<div class="table p-3">
+		<div class="row head">
+			<div class="col-4">Kenteken</div>
+			<div class="col-3">Kleur</div>
+			<div class="col-3">Merk</div>
+			<div class="col-1">Aantal Deuren</div>
+			<div class="col-1">Prijs</div>
+		</div>
+	
+		<div class="row sub" ng-repeat="car in cars">
+			<div class="col-4">{{ car.kenteken }}</div>
+			<div class="col-3">{{ car.kleur }}</div>
+			<div class="col-3">{{ car.merk }}</div>
+			<div class="col-1">{{ car.aantal_deuren }}</div>
+			<div class="col-1">{{ car.prijs | currency }}</div>
+		</div>
+	</div>
 </body>
+</html>
