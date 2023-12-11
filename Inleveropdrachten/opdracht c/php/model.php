@@ -1,2 +1,2 @@
 <?php
-$conn = new mysqli("c4", "root", "", "LocalHost");
+$conn = new mysqli("LocalHost", "root", "", "c4");

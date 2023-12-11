@@ -4,16 +4,16 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 
-$result = $conn->query("SELECT CompanyName, City, Country FROM Customers");
+// $result = $conn->query("SELECT CompanyName, City, Country FROM Customers");
 
 $outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-	if ($outp != "") {$outp .= ",";}
-	$outp .= '{"Name":"' . $rs["CompanyName"] . '",';
-	$outp .= '"City":"' . $rs["City"] . '",';
-	$outp .= '"Country":"'. $rs["Country"] . '"}';
-}
+// while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
+// 	if ($outp != "") {$outp .= ",";}
+// 	$outp .= '{"Name":"' . $rs["CompanyName"] . '",';
+// 	$outp .= '"City":"' . $rs["City"] . '",';
+// 	$outp .= '"Country":"'. $rs["Country"] . '"}';
+// }
 $outp ='{"records":['.$outp.']}';
 
-echo($outp);
+return $outp;
 ?> 

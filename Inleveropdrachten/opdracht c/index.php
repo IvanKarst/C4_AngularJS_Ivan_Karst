@@ -1,7 +1,7 @@
 <?php
 	include('php/auto.php');
 ?>
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -26,6 +26,8 @@
 	<!-- End Bootstrap link  -->
 </head>
 <body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="initialize()">
-	
+	<?php
+		$outp;
+	?>
 </body>
 </html>
