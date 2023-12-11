@@ -24,13 +24,34 @@
 <body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="sort('default')">
 	<div class="table px-5 py-2">
 		<div class="row px-2 py-1 head">
-			<div class="px-1 col-3">Kenteken</div>
-			<div class="px-1 col-3">Kleur</div>
-			<div class="px-1 col-3">Merk</div>
-			<div class="px-1 col-1">Aantal Deuren</div>
-			<div class="px-1 col-1">Prijs</div>
-		</div>
-		<div class="row px-2 py-1 sub" ng-repeat="c in cars || {{ $scope.cheese }}">
+			<div class="px-1 col-3" ng-click="sort('kenteken')">
+				Kenteken
+				<span ng-if="sortBy === 'kenteken' && !reverse" class="arrow "></span>
+				<span ng-if="sortBy === 'kenteken' && reverse" class="arrow arrow-up"></span>
+			</div>
+			<div class="px-1 col-3" ng-click="sort('kleur')">
+				Kleur
+				<span ng-if="sortBy === 'kleur' && !reverse" class="arrow "></span>
+				<span ng-if="sortBy === 'kleur' && reverse" class="arrow arrow-up"></span>
+			</div>
+			<div class="px-1 col-3" ng-click="sort('merk')">
+				Merk
+				<span ng-if="sortBy === 'merk' && !reverse" class="arrow "></span>
+				<span ng-if="sortBy === 'merk' && reverse" class="arrow arrow-up"></span>
+			</div>
+			<div class="px-1 col-1" ng-click="sort('aantal_deuren')">
+				Aantal Deuren
+				<span ng-if="sortBy === 'aantal_deuren' && !reverse" class="arrow "></span>
+				<span ng-if="sortBy === 'aantal_deuren' && reverse" class="arrow arrow-up"></span>
+			</div>
+			<div class="px-1 col-1" ng-click="sort('prijs')">
+				Prijs
+				<span ng-if="sortBy === 'prijs' && !reverse" class="arrow "></span>
+				<span ng-if="sortBy === 'prijs' && reverse" class="arrow arrow-up"></span>
+			</div>
+		  </div>
+		  
+		<div class="row px-2 py-1 sub" ng-repeat="c in cars | orderBy: sortBy:reverse">
 			<div class="px-1 col-3">{{ c.kenteken }}</div>
 			<div class="px-1 col-3">{{ c.kleur }}</div>
 			<div class="px-1 col-3">{{ c.merk }}</div>
