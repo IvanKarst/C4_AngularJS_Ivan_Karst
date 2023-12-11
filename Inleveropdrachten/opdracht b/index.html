@@ -12,7 +12,7 @@
 	<!-- Begin internal links -->
 	<link href="inc/master.css" rel="stylesheet">
 	<script src="inc/model.js"></script>
-	<script src="inc/controller.js"></script>
+	<script src="inc/inputler.js"></script>
 	<!-- End internal links -->
 
 	<!-- Begin Bootstrap link -->
@@ -21,52 +21,119 @@
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 	<!-- End Bootstrap link  -->
 </head>
-<body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="renderTable()">
+<body class="body" ng-app="myApp" ng-inputler="myCtrl" ng-init="renderTable()">
 	<!-- Form to add a new entry -->
-	<form ng-submit="updateTable(newCar)">
-		<div class="form-row">
-			<div class="form-group col-md-3">
-				<label for="kenteken">Kenteken</label>
-				<input type="text" class="form-control" id="kenteken" ng-model="newCar.kenteken" required>
+	<form class="px-5 py-2" ng-submit="updateTable(newCar)">
+		<div class="d-none d-lg-block cnt">
+			<div class="row px-2 py-1">
+				<div class="px-1 col-3">
+					Kenteken
+				</div>
+				<div class="px-1 col-3">
+					kleur
+				</div>
+				<div class="px-1 col-3">
+					merk
+				</div>
+				<div class="px-1 col-1">
+					Aantal deuren
+				</div>
+				<div class="px-1 col-1">
+					Prijs
+				</div>
 			</div>
-			<div class="form-group col-md-3">
-				<label for="kleur">Kleur</label>
-				<input type="text" class="form-control" id="kleur" ng-model="newCar.kleur" required>
+			<div class="row px-2 py-1">
+				<div class="px-1 col-3">
+					<input type="text" class="input" id="kenteken" ng-model="newCar.kenteken" required>
+				</div>
+				<div class="px-1 col-3">
+					<input type="text" class="input" id="kleur" ng-model="newCar.kleur" required>
+				</div>
+				<div class="px-1 col-3">
+					<input type="text" class="input" id="merk" ng-model="newCar.merk" required>
+				</div>
+				<div class="px-1 col-1">
+					<select class="input" ng-model="newCar.aantal_deuren" required>
+						<option value="3">3 Deuren</option>
+						<option value="5">5 Deuren</option>
+					</select>
+				</div>
+				<div class="px-1 col-1">
+					<input type="number" class="input" id="prijs" ng-model="newCar.prijs" required>
+				</div>
+				<div class="px-1 col-1">
+					<button type="submit" class="button">Add</button>
+				</div>
 			</div>
-			<div class="form-group col-md-3">
-				<label for="merk">Merk</label>
-				<input type="text" class="form-control" id="merk" ng-model="newCar.merk" required>
+		</div>
+		<div class="d-block d-lg-none cnt">
+			<div class="row px-2 py-1">
+				<div class="px-1 col-4">
+					Kenteken
+				</div>
+				<div class="px-1 col-8">
+					<input type="text" class="input" id="kenteken" ng-model="newCar.kenteken" required>
+				</div>
 			</div>
-			<div class="form-group col-md-1">
-				<label for="aantal_deuren">Aantal Deuren</label>
-				<input type="number" class="form-control" id="aantal_deuren" ng-model="newCar.aantal_deuren" required>
+			<div class="row px-2 py-1">
+				<div class="px-1 col-4">
+					kleur
+				</div>
+				<div class="px-1 col-8">
+					<input type="text" class="input" id="kleur" ng-model="newCar.kleur" required>
+				</div>
 			</div>
-			<div class="form-group col-md-1">
-				<label for="prijs">Prijs</label>
-				<input type="number" class="form-control" id="prijs" ng-model="newCar.prijs" required>
+			<div class="row px-2 py-1">
+				<div class="px-1 col-4">
+					merk
+				</div>
+				<div class="px-1 col-8">
+					<input type="text" class="input" id="merk" ng-model="newCar.merk" required>
+				</div>
 			</div>
-			<div class="form-group col-md-1">
-				<button type="submit" class="btn btn-primary">Add</button>
+			<div class="row px-2 py-1">
+				<div class="px-1 col-4">
+					Aantal deuren
+				</div>
+				<div class="px-1 col-8">
+					<select class="input" ng-model="newCar.aantal_deuren" required>
+						<option value="3">3 Deuren</option>
+						<option value="5">5 Deuren</option>
+					</select>
+				</div>
+			</div>
+			<div class="row px-2 py-1">
+				<div class="px-1 col-4">
+					Prijs
+				</div>
+				<div class="px-1 col-8">
+					<input type="number" class="input" id="prijs" ng-model="newCar.prijs" required>
+				</div>
+			</div>
+			<div class="row px-2 py-1">
+				<div class="px-1 col-12">
+					<button type="submit" class="button">Add</button>
+				</div>
 			</div>
 		</div>
 	</form>
 
 	<!-- Car Table -->
-	<div class="table p-3">
-		<div class="row head">
-			<div class="col-4">Kenteken</div>
-			<div class="col-3">Kleur</div>
-			<div class="col-3">Merk</div>
-			<div class="col-1">Aantal Deuren</div>
-			<div class="col-1">Prijs</div>
+	<div class="table px-5 py-2">
+		<div class="row px-2 py-1 head">
+			<div class="px-1 col-3">Kenteken</div>
+			<div class="px-1 col-3">Kleur</div>
+			<div class="px-1 col-3">Merk</div>
+			<div class="px-1 col-1">Aantal Deuren</div>
+			<div class="px-1 col-1">Prijs</div>
 		</div>
 	
-		<div class="row sub" ng-repeat="car in cars">
-			<div class="col-4">{{ car.kenteken }}</div>
-			<div class="col-3">{{ car.kleur }}</div>
-			<div class="col-3">{{ car.merk }}</div>
-			<div class="col-1">{{ car.aantal_deuren }}</div>
-			<div class="col-1">{{ car.prijs | currency }}</div>
+		<div class="row px-2 py-1 sub" ng-repeat="car in cars">
+			<div class="px-1 col-3">{{ car.kenteken }}</div>
+			<div class="px-1 col-3">{{ car.kleur }}</div>
+			<div class="px-1 col-3">{{ car.merk }}</div>
+			<div class="px-1 col-1">{{ car.aantal_deuren }}</div>
+			<div class="px-1 col-1">{{ car.prijs | currency }}</div>
 		</div>
 	</div>
 </body>

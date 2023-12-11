@@ -61,9 +61,12 @@
 	justify-content: center;
 }
 
-.ctn{
-	width: 1280px !important;
-	max-width: 100vw !important;
+.cnt{
+	width: 100% !important;
+}
+
+.row{
+	width: 100% !important;
 }
 
 .ng-touched.ng-empty{
