@@ -30,12 +30,12 @@
 			<div class="px-1 col-1">Aantal Deuren</div>
 			<div class="px-1 col-1">Prijs</div>
 		</div>
-		<div class="row px-2 py-1 sub" ng-repeat="cars in cars || {{ $scope.cheese }}">
-			<div class="px-1 col-3">{{ cars.kenteken }}</div>
-			<div class="px-1 col-3">{{ cars.kleur }}</div>
-			<div class="px-1 col-3">{{ cars.merk }}</div>
-			<div class="px-1 col-1">{{ cars.aantal_deuren }}</div>
-			<div class="px-1 col-1">{{ cars.prijs | currency }}</div>
+		<div class="row px-2 py-1 sub" ng-repeat="c in cars || {{ $scope.cheese }}">
+			<div class="px-1 col-3">{{ c.kenteken }}</div>
+			<div class="px-1 col-3">{{ c.kleur }}</div>
+			<div class="px-1 col-3">{{ c.merk }}</div>
+			<div class="px-1 col-1">{{ c.aantal_deuren }}</div>
+			<div class="px-1 col-1">{{ c.prijs | currency }}</div>
 		</div>
 	</div>
 </body>
