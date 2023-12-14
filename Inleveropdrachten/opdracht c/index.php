@@ -1,10 +1,13 @@
-<?php
-	include('php/auto.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8"><?php
+	ini_set('display_errors', true);
+	error_reporting(E_ALL);
+
+	include('./php/auto.php');
+?>
+
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Inlever Opdracht C</title>
@@ -27,7 +30,7 @@
 </head>
 <body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="initialize()">
 	<?php
-		$outp;
+		var_dump($outp);
 	?>
 </body>
 </html>
