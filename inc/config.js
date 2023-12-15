@@ -12,7 +12,4 @@ app.config(function($routeProvider) {
 	.when("/blue", {
 		templateUrl : "templates/blue.htm"
 	})
-	.otherwise({
-		redirectTo: "/"
-	});
 });
