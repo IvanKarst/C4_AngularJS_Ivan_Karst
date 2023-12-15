@@ -57,12 +57,13 @@
 .cntr{
 	width: 100vw !important;
 	max-width: 100vw;
-	display: flex;
+	display: flexbox;
 	justify-content: center;
 }
 
 .cnt{
-	width: 100% !important;
+	max-width: 1000px !important;
+	width: 80vw !important;
 }
 
 .row{

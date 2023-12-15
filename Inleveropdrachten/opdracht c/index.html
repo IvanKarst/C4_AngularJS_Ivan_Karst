@@ -24,13 +24,41 @@
 	<!-- End Bootstrap link  -->
 </head>
 <body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="initialize()">
-	<div>
-		<table>
-			<tr ng-repeat="x in names">
-				<td>{{ x.CompanyName }}</td>
-				<td>{{ x.Adress }}</td>
-			</tr>
-		</table>
+	<div class="container">
+		<div class="row head mt-5">
+			<div class="col-2">
+				Customer ID
+			</div>
+			<div class="col-3">
+				CompanyName
+			</div>
+			<div class="col-2">
+				Adress
+			</div>
+			<div class="col-3">
+				Residency
+			</div>
+			<div class="col-2">
+				Phone Number
+			</div>
+		</div>
+		<div class="row" ng-repeat="x in names">
+			<div class="col-2">
+				{{ x.id }}
+			</div>
+			<div class="col-3">
+				{{ x.CompanyName }}
+			</div>
+			<div class="col-2">
+				{{ x.Adress }}
+			</div>
+			<div class="col-3">
+				{{ x.Residency }}
+			</div>
+			<div class="col-2">
+				{{ x.PhoneNumber }}
+			</div>
+		</div>
 	</div> 
 
 </body>
