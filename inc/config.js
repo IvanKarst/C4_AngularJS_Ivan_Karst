@@ -4,12 +4,15 @@ app.config(function($routeProvider) {
 		templateUrl : "templates/main.htm"
 	})
 	.when("/red", {
-		templateUrl : "red.htm"
+		templateUrl : "templates/red.htm"
 	})
 	.when("/green", {
-		templateUrl : "green.htm"
+		templateUrl : "templates/green.htm"
 	})
 	.when("/blue", {
-		templateUrl : "blue.htm"
+		templateUrl : "templates/blue.htm"
+	})
+	.otherwise({
+		redirectTo: "/"
 	});
 });
