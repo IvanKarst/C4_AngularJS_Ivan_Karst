@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8"><?php
-	ini_set('display_errors', true);
-	error_reporting(E_ALL);
-
-	include('./php/auto.php');
-?>
+	<meta charset="UTF-8">
 
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +24,14 @@
 	<!-- End Bootstrap link  -->
 </head>
 <body class="body" ng-app="myApp" ng-controller="myCtrl" ng-init="initialize()">
-	<?php
-		var_dump($outp);
-	?>
+	<div>
+		<table>
+			<tr ng-repeat="x in names">
+				<td>{{ x.CompanyName }}</td>
+				<td>{{ x.Adress }}</td>
+			</tr>
+		</table>
+	</div> 
+
 </body>
 </html>

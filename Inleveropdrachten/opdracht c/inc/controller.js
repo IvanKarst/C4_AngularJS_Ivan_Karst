@@ -1,6 +1,8 @@
-app.controller('myCtrl', function($scope, myFty) {
-	$scope.factory = angular.copy(myFty);
-	$scope.initialize = function(){
-		console.log($scope.factory);
-	}
+app.controller('myCtrl', function($scope, $http) {
+	$http.get("php/auto.php").then(
+		function (response) {
+			console.log(response);
+			$scope.names = response.data.records;
+		}
+	);
 });
