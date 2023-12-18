@@ -1,3 +1,6 @@
+<?php
+	include('./php/auto.php');
+?>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -51,6 +54,9 @@
 			</div>
 		</div>
 		<div class="container mt-3">
+			<?php 
+				print $created ?? 'table loaded';
+			?>
 			<div ng-view></div>
 		</div>
 	</div>
