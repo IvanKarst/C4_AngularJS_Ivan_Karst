@@ -3,13 +3,10 @@ app.config(function($routeProvider) {
 	.when("/", {
 	  templateUrl : "templates/main.htm"
 	})
-	.when("/update", {
-	  templateUrl : "templates/update.htm"
+	.when("/alter_data", {
+	  templateUrl : "templates/alter_data.htm"
 	})
-	.when("/green", {
-	  templateUrl : "templates/green.htm"
-	})
-	.when("/blue", {
-	  templateUrl : "templates/blue.htm"
+	.when("/add_person", {
+	  templateUrl : "templates/add_person.htm"
 	});
   });
