@@ -57,6 +57,7 @@
 			<?php 
 				print $created ?? 'table loaded';
 			?>
+			<br/>
 			<div ng-view></div>
 		</div>
 	</div>
