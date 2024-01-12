@@ -9,4 +9,4 @@ app.config(function($routeProvider) {
 	.when("/add_person", {
 	  templateUrl : "templates/add_person.htm"
 	});
-  });
+});
