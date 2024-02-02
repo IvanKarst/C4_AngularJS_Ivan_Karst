@@ -1,10 +1,10 @@
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=UTF-8');
+require('model.php');
 
 
 $outp = array();
-$conn = new mysqli('localhost', 'root', '', 'C4');
 
 if($conn->connect_error){
 	die('Connection failed.<br/> Error: '. $conn->connect_error);

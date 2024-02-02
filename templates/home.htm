@@ -1,1 +1,16 @@
-<p>home</p>
+<div class="row head">
+  <div class="col-2">First name</div>
+  <div class="col-2">Last name</div>
+  <div class="col-2">Street housenumber</div>
+  <div class="col-2">Postalcode</div>
+  <div class="col-2">Residency</div>
+  <div class="col-2">Phonenumber</div>
+</div>
+<div class="row" ng-repeat="x in names">
+  <div class="col-2">{{ x.firstname }}</div>
+  <div class="col-2">{{ x.lastname }}</div>
+  <div class="col-2">{{ x.street }} {{ x.housenumber }}</div>
+  <div class="col-2">{{ x.postalcode }}</div>
+  <div class="col-2">{{ x.residency }}</div>
+  <div class="col-2">{{ x.phonenumber }}</div>
+</div>
