@@ -42,19 +42,19 @@ while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 function auto($data){
 	// $type = $data["type"];
 	// $result =  $data;
-	echo json_encode(array("result" => $data));
+	// echo json_encode(array("result" => $data));
 };
 
 if(file_exists('php://input')){
 	$json = file_get_contents('php://input');
-	var_dump($json);
 	$decoded = json_decode($json, true);
+	echo json_encode(array("result" => $decoded));
 	if ($decodedData === null) {
 		http_response_code(400); // Bad Request
 		echo json_encode(array('error' => 'Invalid JSON data'));
 	} else {
 		echo json_encode(array('success' => true));
-		auto($json);
+		auto($decoded);
 	}
 } else {
 	echo json_encode(array("records" => $outp));
