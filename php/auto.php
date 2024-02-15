@@ -2,18 +2,6 @@
 header('Access-Control-Allow-Origin: *');
 header('Content-Type: application/json; charset=UTF-8');
 require('model.php');
-if(file_exists('php://input')){
-	$json = file_get_contents('php://input');
-	var_dump($json);
-	$decoded = json_decode($json, true);
-	if ($decodedData === null) {
-		http_response_code(400); // Bad Request
-		echo json_encode(array('error' => 'Invalid JSON data'));
-	} else {
-		echo json_encode(array('success' => true));
-		auto($json);
-	}
-}
 
 if($conn->connect_error){
 	die('Connection failed.<br/> Error: '. $conn->connect_error);
@@ -50,9 +38,24 @@ if(!$result){
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
 	$outp[] = $rs;
 }
-echo json_encode(array("records" => $outp));
 
 function auto($data){
-	$type = $data["type"];
-	
+	// $type = $data["type"];
+	// $result =  $data;
+	echo json_encode(array("result" => $data));
 };
+
+if(file_exists('php://input')){
+	$json = file_get_contents('php://input');
+	var_dump($json);
+	$decoded = json_decode($json, true);
+	if ($decodedData === null) {
+		http_response_code(400); // Bad Request
+		echo json_encode(array('error' => 'Invalid JSON data'));
+	} else {
+		echo json_encode(array('success' => true));
+		auto($json);
+	}
+} else {
+	echo json_encode(array("records" => $outp));
+}
