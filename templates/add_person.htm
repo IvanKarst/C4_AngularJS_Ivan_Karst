@@ -1,4 +1,5 @@
 <form method="POST" ng-submit="add_person()">
+  <input type="hidden" name="form_action" value="add_person" />
   <div class="row mb-2">
     <div class="col-md-2">
       <input type="text" class="input" placeholder="First Name" ng-model="formData.add_person.firstname" required />

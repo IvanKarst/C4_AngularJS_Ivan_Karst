@@ -1,7 +1,8 @@
-<form method="POST" ng-submit="alter_data($_POST)">
+<form method="POST" ng-submit="alter_data()">
+  <input type="hidden" name="form_action" value="alter_data" />
   <div class="head mb-3">Kies hieronder een van de gegevens waar u aanpassingen wilt doen.</div>
   <div ng-repeat="x in names">
-    <input type="radio" name="edit" id="{{x.id}}" ng-model="alt_data.id" ng-value="x.id" />
+    <input ng-change="alter_loader()" type="radio" name="edit" id="{{x.id}}" ng-model="alt_data.id" ng-value="x.id" />
     <label for="{{x.id}}">
       <div class="row">
         <div class="col-2">{{ x.firstname }}</div>
@@ -15,35 +16,35 @@
   </div>
   <div class="row mb-2 mt-5">
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="First Name" ng-model="alt_data.firstname" required />
+      <input type="text" class="input" placeholder="First Name" ng-model="alt_data.firstname" />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Last Name" ng-model="alt_data.lastname" required />
+      <input type="text" class="input" placeholder="Last Name" ng-model="alt_data.lastname" />
     </div>
 
     <div class="col-1 px-0">
-      <input type="text" class="input" placeholder="Street" ng-model="alt_data.street" required />
+      <input type="text" class="input" placeholder="Street" ng-model="alt_data.street" />
     </div>
     <div class="col-1 px-0">
-      <input type="text" class="input" placeholder="House Number" ng-model="alt_data.housenumber" required />
+      <input type="text" class="input" placeholder="House Number" ng-model="alt_data.housenumber" />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Postal Code" ng-model="alt_data.postalcode" required />
+      <input type="text" class="input" placeholder="Postal Code" ng-model="alt_data.postalcode" />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Residency" ng-model="alt_data.residency" required />
+      <input type="text" class="input" placeholder="Residency" ng-model="alt_data.residency" />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Phone Number" ng-model="alt_data.phonenumber" required />
+      <input type="text" class="input" placeholder="Phone Number" ng-model="alt_data.phonenumber" />
     </div>
   </div>
   <div class="row">
     <div class="col-md-12">
-      <button type="submit" class="button">add_entry</button>
+      <button type="submit" class="button">alter_entry</button>
     </div>
   </div>
 </form>
