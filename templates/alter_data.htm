@@ -1,5 +1,5 @@
 <form method="POST" ng-submit="alter_data()">
-  <input type="hidden" name="form_action" value="alter_data" />
+  <input type="hidden" ng-model="alt_data.form_action" value="alter_data" />
   <div class="head mb-3">Kies hieronder een van de gegevens waar u aanpassingen wilt doen.</div>
   <div ng-repeat="x in names">
     <input ng-change="alter_loader()" type="radio" name="edit" id="{{x.id}}" ng-model="alt_data.id" ng-value="x.id" />

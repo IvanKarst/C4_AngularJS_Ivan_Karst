@@ -45,16 +45,19 @@ function auto($data){
 	// echo json_encode(array("result" => $data));
 };
 
-if(file_exists('php://input')){
-	$json = file_get_contents('php://input');
-	$decoded = json_decode($json, true);
-	echo json_encode(array("result" => $decoded));
-	if ($decodedData === null) {
-		http_response_code(400); // Bad Request
-		echo json_encode(array('error' => 'Invalid JSON data'));
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+	$decoded = json_decode(file_get_contents('php://input'), true);
+	if (isset($decoded['form_action'])) {
+		switch($decoded['form_action']){
+			case 'alter_data': 
+					return alt_data($decoded);
+				break;
+			case 'add_person':
+					add_person($decoded);
+				break;
+		}
 	} else {
-		echo json_encode(array('success' => true));
-		auto($decoded);
+		echo json_encode($decoded);
 	}
 } else {
 	echo json_encode(array("records" => $outp));
