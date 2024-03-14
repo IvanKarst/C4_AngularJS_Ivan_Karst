@@ -23,6 +23,7 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   };
 
   $scope.alter_data = function () {
+    $scope.alt_data.form_action = "alter_data";
     $http({
       method: "POST",
       url: "php/auto.php",

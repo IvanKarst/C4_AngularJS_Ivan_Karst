@@ -50,14 +50,15 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
 	if (isset($decoded['form_action'])) {
 		switch($decoded['form_action']){
 			case 'alter_data': 
-					return alt_data($decoded);
+					alt_data($decoded);
+					echo json_encode('waarom godverdomme doet deze teringzooi t niet');
 				break;
 			case 'add_person':
 					add_person($decoded);
 				break;
 		}
 	} else {
-		echo json_encode($decoded);
+		echo json_encode('test');
 	}
 } else {
 	echo json_encode(array("records" => $outp));
