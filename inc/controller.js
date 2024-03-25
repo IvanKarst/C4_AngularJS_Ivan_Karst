@@ -6,7 +6,7 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
 
   $scope.alter_loader = function () {
     // find the current data requested to be altered
-    var selectedName = $scope.names.find(function (name) {
+    selectedName = $scope.names.find(function (name) {
       return name.id === $scope.alt_data.id;
     });
 
@@ -24,22 +24,24 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
 
   $scope.alter_data = function () {
     $scope.alt_data.form_action = "alter_data";
+    data = $scope.alt_data;
+    console.log(data);
     $http({
       method: "POST",
       url: "php/auto.php",
-      data: $scope.alt_data, // Data to be sent (automatically JSON-encoded by AngularJS)
+      data: data, // Data to be sent (automatically JSON-encoded by AngularJS)
       headers: {
         "Content-Type": "application/json",
       },
     }).then(
       function successCallback(response) {
         // Handle success, if needed
-        console.log("Data successfully sent to server:", response.data);
+        console.log("Data successfully sent to server:", response);
         console.log(response.data.result);
       },
       function errorCallback(response) {
         // Handle error, if needed
-        console.error("Error sending data to server:", response.status, response.statusText);
+        console.error("Error sending data to server:", response);
       }
     );
   };
