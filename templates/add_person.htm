@@ -1,31 +1,30 @@
 <form method="POST" ng-submit="add_person()">
-  <input type="hidden" name="form_action" value="add_person" />
   <div class="row mb-2">
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="First Name" ng-model="formData.add_person.firstname" required />
+      <input type="text" class="input" placeholder="First Name" ng-model="add_person.firstname" required />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Last Name" ng-model="formData.add_person.lastname" required />
+      <input type="text" class="input" placeholder="Last Name" ng-model="add_person.lastname" required />
     </div>
 
     <div class="col-1 px-0">
-      <input type="text" class="input" placeholder="Street" ng-model="formData.add_person.street" required />
+      <input type="text" class="input" placeholder="Street" ng-model="add_person.street" required />
     </div>
     <div class="col-1 px-0">
-      <input type="text" class="input" placeholder="House Number" ng-model="formData.add_person.housenumber" required />
+      <input type="text" class="input" placeholder="House Number" ng-model="add_person.housenumber" required />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Postal Code" ng-model="formData.add_person.postalcode" required />
+      <input type="text" class="input" placeholder="Postal Code" ng-model="add_person.postalcode" required />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Residency" ng-model="formData.add_person.residency" required />
+      <input type="text" class="input" placeholder="Residency" ng-model="add_person.residency" required />
     </div>
 
     <div class="col-md-2">
-      <input type="text" class="input" placeholder="Phone Number" ng-model="formData.add_person.phonenumber" required />
+      <input type="text" class="input" placeholder="Phone Number" ng-model="add_person.phonenumber" required />
     </div>
   </div>
   <div class="row">

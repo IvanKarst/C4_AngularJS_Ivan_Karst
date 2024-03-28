@@ -25,11 +25,11 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
 
   $scope.alter_data = function () {
     $scope.alt_data.form_action = "alter_data";
-    data = $scope.alt_data;
+    alt_data = $scope.alt_data;
     $http({
       method: "POST",
       url: "php/auto.php",
-      data: data, // Data to be sent (automatically JSON-encoded by AngularJS)
+      data: alt_data, // Data to be sent (automatically JSON-encoded by AngularJS)
       headers: {
         "Content-Type": "application/json",
       },
@@ -48,6 +48,7 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
 
   $scope.add_person = function () {
     $scope.add_person.form_action = "add_person";
+    console.log($scope.add_person);
     $http({
       method: "POST",
       url: "php/auto.php",
