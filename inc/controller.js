@@ -1,5 +1,6 @@
 app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   $scope.alt_data = {};
+  $scope.add_person = {};
   $http.get("php/auto.php").then(function (response) {
     $scope.names = response.data.records;
   });
@@ -25,7 +26,6 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   $scope.alter_data = function () {
     $scope.alt_data.form_action = "alter_data";
     data = $scope.alt_data;
-    console.log(data);
     $http({
       method: "POST",
       url: "php/auto.php",
@@ -47,6 +47,7 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   };
 
   $scope.add_person = function () {
+    $scope.add_person.form_action = "add_person";
     $http({
       method: "POST",
       url: "php/auto.php",
