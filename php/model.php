@@ -9,7 +9,7 @@ function sql_load($sql, $cn = null){
     if ($cn->query($sql) === TRUE) {
         return true;
     } else {
-        return json_encode("Error: " . $sql . "<br>" . $cn->error);
+        return json_encode("Error: query-" . $sql . "<br>" . $cn->error);
     }
 }
 function add_person($data) {
@@ -17,7 +17,7 @@ function add_person($data) {
     sql_load($sql);
 }
 function alt_data($data){
-    $sql = "UPDATE ` people` SET `firstname`='".$data['firstname']."', `lastname`='".$data['lastname']."', `street`='".$data['street']."', `housenumber`='".$data['housenumber']."', `postalcode`='".$data['postalcode']."', `residency`='".$data['residency']."', `phonenumber`='".$data['phonenumber']."'";
+    $sql = "UPDATE `people` SET `firstname`='".$data['firstname']."', `lastname`='".$data['lastname']."', `street`='".$data['street']."', `housenumber`='".$data['housenumber']."', `postalcode`='".$data['postalcode']."', `residency`='".$data['residency']."', `phonenumber`='".$data['phonenumber']."' WHERE id=".$data['id'];
     sql_load($sql);
 }
 function create_table(){
