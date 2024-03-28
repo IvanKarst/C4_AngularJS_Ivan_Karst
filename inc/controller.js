@@ -57,11 +57,11 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
     }).then(
       function successCallback(response) {
         // Handle success, if needed
-        console.log("Data successfully sent to server:", response.data);
+        console.log("Data successfully sent to server:", response);
       },
       function errorCallback(response) {
         // Handle error, if needed
-        console.error("Error sending data to server:", response.status, response.statusText);
+        console.error("Error sending data to server:", response);
       }
     );
   };
