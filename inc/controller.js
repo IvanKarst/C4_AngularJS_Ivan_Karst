@@ -1,6 +1,6 @@
 app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   $scope.alt_data = {};
-  $scope.add_person = {};
+  $scope.addp_data = {};
   $http.get("php/auto.php").then(function (response) {
     $scope.names = response.data.records;
   });
@@ -25,11 +25,10 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
 
   $scope.alter_data = function () {
     $scope.alt_data.form_action = "alter_data";
-    alt_data = $scope.alt_data;
     $http({
       method: "POST",
       url: "php/auto.php",
-      data: alt_data, // Data to be sent (automatically JSON-encoded by AngularJS)
+      data: $scope.alt_data, // Data to be sent (automatically JSON-encoded by AngularJS)
       headers: {
         "Content-Type": "application/json",
       },
@@ -47,12 +46,12 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   };
 
   $scope.add_person = function () {
-    $scope.add_person.form_action = "add_person";
-    console.log($scope.add_person);
+    $scope.addp_data.form_action = "add_person";
+    console.log($scope.addp_data);
     $http({
       method: "POST",
       url: "php/auto.php",
-      data: $scope.add_person, // Data to be sent (automatically JSON-encoded by AngularJS)
+      data: $scope.addp_data, // Data to be sent (automatically JSON-encoded by AngularJS)
       headers: {
         "Content-Type": "application/json",
       },
