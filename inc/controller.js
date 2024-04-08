@@ -6,6 +6,12 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
     $scope.names = response.data.records;
   });
 
+  $scope.loadData = function () {
+    $http.get("php/auto.php").then(function (response) {
+      $scope.names = response.data.records;
+    });
+  };
+
   $scope.alter_loader = function () {
     // find the current data requested to be altered
     selectedName = $scope.names.find(function (name) {
@@ -44,6 +50,7 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
         console.error("Error sending data to server:", response);
       }
     );
+    $scope.loadData();
   };
 
   $scope.add_person = function () {
@@ -66,6 +73,7 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
         console.error("Error sending data to server:", response);
       }
     );
+    $scope.loadData();
   };
   $scope.delete_entry = function (delete_data) {
     delete_data.form_action = "delete_person";
@@ -87,5 +95,6 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
         console.error("Error sending data to server:", response);
       }
     );
+    $scope.loadData();
   };
 });

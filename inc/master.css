@@ -97,14 +97,28 @@ a {
   width: 0px;
   height: 0px;
   border-style: solid;
-  border-width: 5px 5px 0; /* Adjust the size as needed */
-  border-color: black transparent transparent transparent; /* Adjust the color as needed */
-  vertical-align: middle; /* Vertical alignment adjustment */
+  border-width: 5px 5px 0;
+  border-color: black transparent transparent transparent;
+  vertical-align: middle;
 }
 
 .arrow-up {
   transform: rotate(180deg);
   padding-top: 0;
+}
+
+.remove {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid black 1px;
+  width: 20px;
+  height: 20px;
+  font-size: 18px;
+  color: white;
+  background-color: red;
+  cursor: pointer;
 }
 
 label {

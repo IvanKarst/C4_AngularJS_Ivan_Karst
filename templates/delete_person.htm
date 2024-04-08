@@ -1,5 +1,5 @@
-<div class="row head">
-  <div class="col-10">
+<div class="row head mb-3">
+  <div class="col-11">
     <div class="row">
       <div class="col-2">First name</div>
       <div class="col-2">Last name</div>
@@ -10,8 +10,8 @@
     </div>
   </div>
 </div>
-<div class="row" ng-repeat="x in names">
-  <div class="col-10">
+<div class="row mt-2" ng-repeat="x in names">
+  <div class="col-11">
     <div class="row">
       <div class="col-2">{{ x.firstname }}</div>
       <div class="col-2">{{ x.lastname }}</div>
@@ -21,9 +21,11 @@
       <div class="col-2">{{ x.phonenumber }}</div>
     </div>
   </div>
-  <div class="col-2">
+  <div class="col-1">
     <div class="row">
-      <div class="col-12" ng-click="delete_entry( x )">delete this entry</div>
+      <div class="col-12" title="remove entry" ng-click="delete_entry( x )">
+        <div class="remove">-</div>
+      </div>
     </div>
   </div>
 </div>
