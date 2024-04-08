@@ -35,6 +35,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
             add_person($decoded);
             echo json_encode(array("result" => "success"));
             break;
+        case 'delete_person':
+            delete_person($decoded);
+            echo json_encode(array("result" => "success"));
+            break;
 		default:
 			echo json_encode(array("error" => "no recognized form"));
 			break;

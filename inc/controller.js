@@ -1,6 +1,7 @@
 app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
   $scope.alt_data = {};
   $scope.addp_data = {};
+  delete_data = {};
   $http.get("php/auto.php").then(function (response) {
     $scope.names = response.data.records;
   });
@@ -52,6 +53,27 @@ app.controller("myCtrl", function ($scope, $http, $routeParams, $location) {
       method: "POST",
       url: "php/auto.php",
       data: $scope.addp_data, // Data to be sent (automatically JSON-encoded by AngularJS)
+      headers: {
+        "Content-Type": "application/json",
+      },
+    }).then(
+      function successCallback(response) {
+        // Handle success, if needed
+        console.log("Data successfully sent to server:", response);
+      },
+      function errorCallback(response) {
+        // Handle error, if needed
+        console.error("Error sending data to server:", response);
+      }
+    );
+  };
+  $scope.delete_entry = function (delete_data) {
+    delete_data.form_action = "delete_person";
+    console.log(delete_data);
+    $http({
+      method: "POST",
+      url: "php/auto.php",
+      data: delete_data, // Data to be sent (automatically JSON-encoded by AngularJS)
       headers: {
         "Content-Type": "application/json",
       },

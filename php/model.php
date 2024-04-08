@@ -20,6 +20,10 @@ function alt_data($data){
     $sql = "UPDATE `people` SET `firstname`='".$data['firstname']."', `lastname`='".$data['lastname']."', `street`='".$data['street']."', `housenumber`='".$data['housenumber']."', `postalcode`='".$data['postalcode']."', `residency`='".$data['residency']."', `phonenumber`='".$data['phonenumber']."' WHERE id=".$data['id'];
     sql_load($sql);
 }
+function delete_person($data){
+    $sql = "DELETE FROM `people` WHERE id=".$data['id'];
+    sql_load($sql);
+}
 function create_table(){
     $sql = 'CREATE TABLE `people` (
         `id` int(255) NOT NULL,
